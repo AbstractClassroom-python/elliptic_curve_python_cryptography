@@ -25,8 +25,12 @@ if __name__ == "__main__":
     ecc = load_curve_from_json("NIST_P256")
 
     # Generate key pairs
-    alice_priv, alice_pub = ecc.generate_keypair()
-    bob_priv, bob_pub = ecc.generate_keypair()
+    # alice_priv, alice_pub = ecc.generate_keypair()
+    # bob_priv, bob_pub = ecc.generate_keypair()
+    alice_priv = 76349581564047141814875285095967928718789290664609381792099970545888051278791
+    alice_pub = ecc.scalar_mult(alice_priv, ecc.g)
+    bob_priv = 111784848138526505473109634671843680337675363081375203966812428468200438962670
+    bob_pub = ecc.scalar_mult(bob_priv, ecc.g)
 
     print("Alice Private:", alice_priv)
     print("Alice Public: ", alice_pub)

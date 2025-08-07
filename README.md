@@ -62,3 +62,6 @@ Below are the items you need to complete to receive full credit for this assignm
 - ✅ Ensure the implementation runs without errors or warnings and completes in less than 1 second for each test script.
 - ✅ Create a file called `README2.md` that details all the methods you implemented, their purpose, and any important notes about your implementation.
 - ✅ Create a video walkthrough of your implementation, explaining how each part works and demonstrating the tests passing. The video should be at least 10 minutes long and no longer than 20 minutes.
+
+## Comment About Randomness
+For testing purposes, the `random` module is used to generate private keys. In a production environment, you should use a cryptographically secure random number generator to ensure the security of the keys. The `secrets` module in Python is a good choice for this purpose.  The `test.py` script will generate different private keys each time it is run, leading to different outputs. This is expected behavior and you can compare the output with known Elliptic Curve implementations (online calculators).  The `test2.py` script uses fixed private keys to ensure consistent output for testing purposes.
