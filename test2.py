@@ -49,7 +49,7 @@ if __name__ == "__main__":
     cipher = AES.new(aes_key, AES.MODE_CBC)
     iv = cipher.iv
     ciphertext = cipher.encrypt(pad(plaintext, AES.block_size))
-    print("Ciphertext:   ", ciphertext.hex())
+    # print("Ciphertext:   ", ciphertext.hex())
 
     # Decrypt with Bob's AES key
     bob_aes_key = ecc.get_shared_key(bob_priv, alice_pub)
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     # ECDSA Sign and Verify
     message = "Signed message"
     signature = ecc.sign(message, alice_priv)
-    print("Signature:    ", signature)
+    # print("Signature:    ", signature)
 
     valid = ecc.verify(message, signature, alice_pub)
     print("Signature valid?", valid)
